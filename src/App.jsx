@@ -109,7 +109,7 @@ function App() {
         <div className="flex justify-center">
         <button
           className={"btn-registro animate-pulse"}
-          onClick={() => handleSpinClick()}
+          onClick={() => {handleSpinClick()}}
           disabled={mustSpin}
         >
           {mustSpin ? "Suerte" : "Girar"}
