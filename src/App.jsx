@@ -83,7 +83,7 @@ function App() {
         {data && (
           <Wheel
             outerBorderWidth={5}
-            // spinDuration={[0.2]}
+            spinDuration={[0.3]}
             mustStartSpinning={mustSpin}
             prizeNumber={prizeNumber}
             data={data?.ruleta}
