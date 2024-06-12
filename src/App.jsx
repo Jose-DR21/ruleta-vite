@@ -77,8 +77,8 @@ function App() {
   };
 
   return (
-    <div className="modal-box max-h-screen overflow-hidden  h-fit w-full  text-red-600  bg-transparent">
-      <div className="roulette-container h-fit flex justify-center ">
+    <div className="modal-box max-h-screen overflow-hidden  h-full w-full  text-red-600  bg-transparent">
+      <div className="roulette-container h-fit flex justify-center items-start ">
         <div className="w-fit h-fit flex flex-col justify-center relative">
         {data && (
           <Wheel
