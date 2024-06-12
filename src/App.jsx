@@ -77,7 +77,7 @@ function App() {
   };
 
   return (
-    <div className="text-red-600  bg-transparent h-fit w-fit ">
+    <div className="modal-box text-red-600  bg-transparent h-fit w-fit ">
       <div className="roulette-container relative">
         {data && (
           <Wheel
