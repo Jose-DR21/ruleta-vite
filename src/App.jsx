@@ -11,37 +11,33 @@ const data = {
       id: 0,
       option: "5%",
       probabilidad: [1, 5],
-      message:"Bien"
+      message: "Bien",
     }, //5%
     {
       id: 1,
       option: "10%",
       probabilidad: [6, 15],
-      message:"Bien1"
-
+      message: "Bien1",
     }, // 10%
     {
       id: 2,
       option: "15%",
       style: { textColor: "#000" },
       probabilidad: [16, 30],
-      message:"Bien2"
-
+      message: "Bien2",
     }, //15%
     {
       id: 3,
       option: "30%",
       probabilidad: [31, 60],
-      message:"Bien3"
-
+      message: "Bien3",
     }, //30%
     {
       id: 4,
       option: "40%",
       style: { textColor: "#000" },
       probabilidad: [61, 100],
-      message:"Bien4"
-
+      message: "Bien4",
     }, //40%
   ],
 };
@@ -81,9 +77,45 @@ function App() {
   };
 
   return (
-    <div className="text-red-600  bg-gray-200 h-screen w-screen ">
-
-      <h1>111</h1>
+    <div className="text-red-600  bg-transparent h-fit w-fit ">
+      <div className="roulette-container relative">
+        {data && (
+          <Wheel
+            outerBorderWidth={5}
+            spinDuration={[0.2]}
+            mustStartSpinning={mustSpin}
+            prizeNumber={prizeNumber}
+            data={data?.ruleta}
+            backgroundColors={backgroundColors}
+            radiusLineWidth={0}
+            radiusLineColor="transparent"
+            innerBorderColor="black"
+            outerBorderColor="yellow"
+            disableInitialAnimation={false}
+            onStopSpinning={() => {
+              setMustSpin(false);
+              setMessage(data?.ruleta[prizeNumber].message);
+            }}
+          />
+        )}
+        <img
+          className="roulette-logo logo"
+          src={"/logo.png"}
+          width={50}
+          height={50}
+          alt="logo"
+        />
+      </div>
+      <div className="flex justify-center">
+        <button
+          className={"btn-registro animate-pulse"}
+          onClick={() => handleSpinClick()}
+          disabled={mustSpin}
+        >
+          {mustSpin ? "Suerte" : "Girar"}
+        </button>
+      </div>
+      {/* <h1>111</h1>
       <button
         className="btn-ruleta w-fit py-2 px-1 from-rgba(14,83,244,1) absolute  top-72 right-0 transform rotate-180 to-rgba(0,23,73,1) 100%) rounded-tr-lg rounded-br-lg "
         style={{ writingMode: "vertical-lr" }}
@@ -91,10 +123,9 @@ function App() {
           document.getElementById("modal_ruleta_movil").showModal()
         }
       >
-        {/* <span className="absolute -top-1 -right-1 animate-pulse w-4 h-4 bg-red-500 rounded-full"></span> */}
         <span className=" tracking-[0.2rem] "> RULETA MOVIL</span>
-      </button>
-      <dialog id="modal_ruleta_movil" className="modal">
+      </button> */}
+      {/* <dialog id="modal_ruleta_movil" className="modal">
         <div className="modal-box bg-white overflow-hidden border-2 border-yellow-200">
           <div className="flex justify-end">
             <div className="modal-action">
@@ -117,50 +148,13 @@ function App() {
             </h3>
           </div>
 
-          <div className="roulette-container relative">
-            {data && (
-              <Wheel
-                outerBorderWidth={5}
-                spinDuration={[0.2]}
-                mustStartSpinning={mustSpin}
-                prizeNumber={prizeNumber}
-                data={data?.ruleta}
-                backgroundColors={backgroundColors}
-                radiusLineWidth={0}
-                radiusLineColor="transparent"
-                innerBorderColor="black"
-                outerBorderColor="yellow"
-                disableInitialAnimation={false}
-                onStopSpinning={() => {
-                  setMustSpin(false);
-                  setMessage(data?.ruleta[prizeNumber].message);
-                }}
-              />
-            )}
-            <img
-              className="roulette-logo logo"
-              src={"/logo.png"}
-              width={50}
-              height={50}
-              alt="logo"
-            />
-          </div>
-
           <div className="flex justify-center">
             <h1 className={`block h-8 text-lg text-white`}>{message}</h1>
           </div>
 
-          <div className="flex justify-center">
-            <button
-              className={"btn-registro animate-pulse"}
-              onClick={() => handleSpinClick()}
-              disabled={mustSpin}
-            >
-              {mustSpin ? "Suerte" : "Girar"}
-            </button>
-          </div>
+         
         </div>
-      </dialog>
+      </dialog> */}
     </div>
   );
 }
