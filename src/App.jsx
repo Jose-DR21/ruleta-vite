@@ -1,6 +1,4 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import { Wheel } from "react-custom-roulette";
 
 import "./App.css";
@@ -99,13 +97,13 @@ function App() {
             }}
           />
         )}
-        <img
+        {/* <img
           className="roulette-logo logo"
           src={"/logo.png"}
           width={50}
           height={50}
           alt="logo"
-        />
+        /> */}
         <div className="flex justify-center">
         <button
           className={"btn-registro animate-pulse"}
@@ -120,47 +118,7 @@ function App() {
         </div>
       
       </div>
-     
-      {/* <h1>111</h1>
-      <button
-        className="btn-ruleta w-fit py-2 px-1 from-rgba(14,83,244,1) absolute  top-72 right-0 transform rotate-180 to-rgba(0,23,73,1) 100%) rounded-tr-lg rounded-br-lg "
-        style={{ writingMode: "vertical-lr" }}
-        onClick={() =>
-          document.getElementById("modal_ruleta_movil").showModal()
-        }
-      >
-        <span className=" tracking-[0.2rem] "> RULETA MOVIL</span>
-      </button> */}
-      {/* <dialog id="modal_ruleta_movil" className="modal">
-        <div className="modal-box bg-white overflow-hidden border-2 border-yellow-200">
-          <div className="flex justify-end">
-            <div className="modal-action">
-              <form method="dialog">
-                <button
-                  className="flex justify-center items-center gap-2 w-8 h-8 transition-all
-              cursor-pointer rounded-md shadow-2xl text-white font-semibold bg-gradient-to-r
-               from-[#fb7185] via-[#e11d48] to-[#be123c] hover:shadow-xl hover:shadow-red-500
-                hover:scale-105 duration-300 hover:from-[#be123c] hover:to-[#fb7185]"
-                >
-                  x
-                </button>
-              </form>
-            </div>
-          </div>
 
-          <div className="flex justify-center">
-            <h3 className="font-bold text-lg text-center px-5 py-2 tituloRuleta rounded-badge ">
-              Movil {data?.nombre}
-            </h3>
-          </div>
-
-          <div className="flex justify-center">
-            <h1 className={`block h-8 text-lg text-white`}>{message}</h1>
-          </div>
-
-         
-        </div>
-      </dialog> */}
     </div>
   );
 }
