@@ -77,8 +77,9 @@ function App() {
   };
 
   return (
-    <div className="modal-box text-red-600  bg-transparent h-fit w-fit ">
-      <div className="roulette-container relative">
+    <div className="modal-box max-h-screen overflow-hidden  h-fit w-full  text-red-600  bg-transparent">
+      <div className="roulette-container h-fit flex justify-center ">
+        <div className="w-fit h-fit flex flex-col justify-center relative">
         {data && (
           <Wheel
             outerBorderWidth={5}
@@ -105,8 +106,7 @@ function App() {
           height={50}
           alt="logo"
         />
-      </div>
-      <div className="flex justify-center">
+        <div className="flex justify-center">
         <button
           className={"btn-registro animate-pulse"}
           onClick={() => handleSpinClick()}
@@ -114,7 +114,13 @@ function App() {
         >
           {mustSpin ? "Suerte" : "Girar"}
         </button>
+        </div>
+    
+
+        </div>
+      
       </div>
+     
       {/* <h1>111</h1>
       <button
         className="btn-ruleta w-fit py-2 px-1 from-rgba(14,83,244,1) absolute  top-72 right-0 transform rotate-180 to-rgba(0,23,73,1) 100%) rounded-tr-lg rounded-br-lg "
